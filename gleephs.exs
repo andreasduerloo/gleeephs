@@ -14,11 +14,11 @@ defmodule Gleeph do
       map
     else
       position = Enum.random(to_check)
-    if check(map, position) do
-      do_generate(%{map | position => "#"}, to_check -- [position], i + 1)
-    else
-      do_generate(map, to_check -- [position], i + 1)
-    end
+      if check(map, position) do
+        do_generate(%{map | position => "#"}, to_check -- [position], i + 1)
+      else
+        do_generate(map, to_check -- [position], i + 1)
+      end
     end
   end
 
